@@ -8,6 +8,9 @@ const Navbar = () => {
 
     const themeChange = () => {
         document.body.classList.toggle(darkTheme)
+        console.log(document.querySelector('.change-theme'))
+        document.querySelector('.change-theme').classList.toggle('uil-moon')
+        document.querySelector('.change-theme').classList.toggle('uil-sun')
     }
 
     /*==================== MENU SHOW Y HIDDEN ====================*/
@@ -126,7 +129,7 @@ const Navbar = () => {
                 <div className="nav__btns">
                     <i
                         onClick={() => { themeChange(); }}
-                        className="uil uil-moon change-theme" id="theme-button"></i>
+                        className="uil uil-sun change-theme" id="theme-button"></i>
                     <div
                     onClick={()=>{
                         document.getElementById('nav-menu').classList.add('show-menu')
