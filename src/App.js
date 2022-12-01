@@ -1,24 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Index from './components/Index';
 
 function App() {
+  // Triggers every second
+  let xi = 0;
+  function changeColor() {
+    document.documentElement.style.setProperty('--hue-color', xi);
+    xi++;
+    if (xi >= 360) {
+      xi = 0;  // Reset i to 0 if it exceeds colors length
+    }
+  }
+  setInterval(changeColor, 250);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Index />
   );
 }
 
